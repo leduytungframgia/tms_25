@@ -1,0 +1,18 @@
+<% provide :title, 'New Subject' %>
+<%= form_for @subject do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :name, placeholder: t(:new_name) %>
+  </div>
+  <div class="field">
+    <%= f.text_area :instruction, placeholder: t(:new_instruction) %>
+  </div>
+  <div class="field">
+    <%= f.text_field :start_date, placeholder: t(:new_start_date) %>
+  </div>
+  <div class="field">
+    <%= f.text_field :end_date, placeholder: t(:new_end_date) %>
+  </div>
+
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

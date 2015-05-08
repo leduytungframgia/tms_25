@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  created: "Created"
+  new_name: "Compose new name"
+  new_instruction: "Compose new instruction"
+  new_start_date: "Compose start date"
+  new_end_date: "Compose end date"
