@@ -1,11 +1,5 @@
-User.create!(name: "Admin",
-             email: "admin@gmail.com",
-             password: "admin",
-             password_confirmation: "admin",
-             supervisor: true)
-
-User.create!(name: "khanhkhanh",
+User.create!(name: "Example User",
              email: "khanhkhanh@gmail.com",
-             password: "khanhkhanh",
-             password_confirmation: "khanhkhanh",
-             supervisor: false)
+             password: "khanh2204",
+             password_confirmation: "khanh2204",
+             supervisor: true)
