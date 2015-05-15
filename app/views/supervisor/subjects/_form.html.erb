@@ -5,8 +5,25 @@
   <%= f.label :instruction %>
   <%= f.text_area :instruction, class: 'form-control' %>
   <%= f.label :start_date, t(:start_date) %>
-  <%= f.password_field :start_date, class: 'form-control' %>
+  <%= f.text_field :start_date, class: 'form-control' %>
   <%= f.label :end_date, t(:end_date) %>
-  <%= f.password_field :end_date, class: 'form-control' %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <%= f.text_field :end_date, class: 'form-control' %>
+
+  <%= f.fields_for :tasks do |builder| %>
+    <h2>Task <%= builder.index + 1 %></h2>
+    <%= render "task_fields", :f => builder %>
+  <% end %>
+
+  <%= f.fields_for :tasks, @subject.tasks.build do |builder| %>
+    <div id="task1" class="clonedInput">
+      <h2 id="reference" name="reference" class="heading-reference"> New task </h2>
+      <%= render "task_fields", :f => builder %>
+    </div>
+    <div id="addDelButtons">
+      <input type="button" id="btnAdd" value="Add Task"> 
+      <input type="button" id="btnDel" value="remove section above">
+    </div>
+  <% end %>
+
+    <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
